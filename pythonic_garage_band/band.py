@@ -4,11 +4,12 @@ class Musician:
 
 
 class Band(Musician):
+    instances = []
 
-    def __init__(self, name, members=None, instances=[]):
+    def __init__(self, name, members=None):
+        super().__init__(name)
         self.name = name
         self.members = members
-        self.instances = instances
         Band.instances.append(self)
 
     def __str__(self):
@@ -30,6 +31,7 @@ class Band(Musician):
 
 class Guitarist(Musician):
     def __init__(self, name):
+        super().__init__(name)
         self.name = name
 
     def __str__(self):
@@ -49,6 +51,7 @@ class Guitarist(Musician):
 
 class Bassist(Musician):
     def __init__(self, name):
+        super().__init__(name)
         self.name = name
 
     def __str__(self):
@@ -68,6 +71,7 @@ class Bassist(Musician):
 
 class Drummer(Musician):
     def __init__(self, name):
+        super().__init__(name)
         self.name = name
 
     def __str__(self):
@@ -87,10 +91,3 @@ class Drummer(Musician):
 
 if __name__ == '__main__':
     pass
-# joan = Guitarist('Joan Jett')
-# sheila = Drummer("Sheila E.")
-# meshell = Bassist("Meshell Ndegeocello")
-# nirvana = Band("Nirvana", [])
-# jimi = Guitarist("Jimi Hendrix")
-# flea = Bassist("Flea")
-# ginger = Drummer("Ginger Baker")
