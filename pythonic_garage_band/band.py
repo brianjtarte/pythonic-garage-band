@@ -24,6 +24,10 @@ class Guitarist:
     def __repr__(self):
         return f'Guitarist instance. Name = {self.name}'
 
+    @classmethod
+    def get_instrument(cls):
+        return f'guitar'
+
 
 class Bassist:
     def __init__(self, name):
@@ -34,6 +38,10 @@ class Bassist:
 
     def __repr__(self):
         return f'Bassist instance. Name = {self.name}'
+
+    @classmethod
+    def get_instrument(cls):
+        return f'bass'
 
 
 class Drummer:
@@ -46,6 +54,10 @@ class Drummer:
     def __repr__(self):
         return f'Drummer instance. Name = {self.name}'
 
+    @classmethod
+    def get_instrument(cls):
+        return f'drums'
+
 
 if __name__ == '__main__':
     pass
@@ -53,4 +65,7 @@ joan = Guitarist('Joan Jett')
 sheila = Drummer("Sheila E.")
 meshell = Bassist("Meshell Ndegeocello")
 nirvana = Band("Nirvana", [])
+jimi = Guitarist("Jimi Hendrix")
+flea = Bassist("Flea")
+ginger = Drummer("Ginger Baker")
 
