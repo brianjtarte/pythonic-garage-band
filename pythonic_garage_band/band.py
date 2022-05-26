@@ -1,4 +1,9 @@
-class Band:
+class Musician:
+    def __init__(self, name):
+        self.name = name
+
+
+class Band(Musician):
     def __init__(self, name, members=None):
         self.name = name
         self.members = members
@@ -9,12 +14,14 @@ class Band:
     def __repr__(self):
         return f"Band instance. name={self.name}, members={self.members}"
 
+    def play_solos(self):
+        solo = []
+        for member in self.members:
+            solo.append(member.play_solo())
+        return solo
 
-class Musician:
-    pass
 
-
-class Guitarist:
+class Guitarist(Musician):
     def __init__(self, name):
         self.name = name
 
@@ -28,8 +35,12 @@ class Guitarist:
     def get_instrument(cls):
         return f'guitar'
 
+    @classmethod
+    def play_solo(cls):
+        return f'face melting guitar solo'
 
-class Bassist:
+
+class Bassist(Musician):
     def __init__(self, name):
         self.name = name
 
@@ -43,8 +54,12 @@ class Bassist:
     def get_instrument(cls):
         return f'bass'
 
+    @classmethod
+    def play_solo(cls):
+        return f'bom bom buh bom'
 
-class Drummer:
+
+class Drummer(Musician):
     def __init__(self, name):
         self.name = name
 
@@ -58,14 +73,17 @@ class Drummer:
     def get_instrument(cls):
         return f'drums'
 
+    @classmethod
+    def play_solo(cls):
+        return f'rattle boom crash'
+
 
 if __name__ == '__main__':
     pass
-joan = Guitarist('Joan Jett')
-sheila = Drummer("Sheila E.")
-meshell = Bassist("Meshell Ndegeocello")
-nirvana = Band("Nirvana", [])
-jimi = Guitarist("Jimi Hendrix")
-flea = Bassist("Flea")
-ginger = Drummer("Ginger Baker")
-
+# joan = Guitarist('Joan Jett')
+# sheila = Drummer("Sheila E.")
+# meshell = Bassist("Meshell Ndegeocello")
+# nirvana = Band("Nirvana", [])
+# jimi = Guitarist("Jimi Hendrix")
+# flea = Bassist("Flea")
+# ginger = Drummer("Ginger Baker")
