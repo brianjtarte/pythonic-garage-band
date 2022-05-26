@@ -19,8 +19,8 @@ class Band(Musician):
 
     def play_solos(self):
         solo_list = []
-        for member in self.members:
-            solo_list.append(member.play_solo())
+        for musicians in self.members:
+            solo_list.append(musicians.play_solo())
         return solo_list
 
     @classmethod
