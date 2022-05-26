@@ -26,14 +26,31 @@ class Guitarist:
 
 
 class Bassist:
-    pass
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return f"My name is {self.name} and I play bass"
+
+    def __repr__(self):
+        return f'Bassist instance. Name = {self.name}'
 
 
 class Drummer:
-    pass
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return f"My name is {self.name} and I play drums"
+
+    def __repr__(self):
+        return f'Drummer instance. Name = {self.name}'
 
 
 if __name__ == '__main__':
     pass
 joan = Guitarist('Joan Jett')
+sheila = Drummer("Sheila E.")
+meshell = Bassist("Meshell Ndegeocello")
+nirvana = Band("Nirvana", [])
 
